@@ -6,21 +6,27 @@
 a {
   text-decoration: none;
 }
-
+body{
+  background: grey url(./wall.jpg) no-repeat center center;
+  background-size: cover;
+}
 main {
   height: 100vh;
   border: 1px solid red;
   text-align: center;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#wrapper {
+main > div{
   display: inline-block;
   justify-content: center;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding: 40px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
 }
 
 kbd {
@@ -32,12 +38,17 @@ kbd {
   text-transform: uppercase;
   /*变成大写字母*/
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: Helvetica;
   font-size: unset;
   border-radius: 10%;
-  color: white;
+  color: red;
   background: black;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #373737;
+  box-shadow: 0 0 0 1px #1A1B1C,0 0 0 1px #1F2020,0px 3px 1px 0px #000000;
 }
 
 kbd>button {
