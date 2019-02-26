@@ -50,32 +50,24 @@
     y: "youtube.com",
     z: "zhihu.com"
   }
-  hashInLocalStorage = getData('zzz')
+  hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
   if (hashInLocalStorage) {
     hash = hashInLocalStorage
   }
 
-  function getData(name){
-    return JSON.parse(localStorage.getItem('zzz') || 'null')
-  }
-  function tag(tagName) {
-    return document.createElement(tagName)
-  }
   for (var index = 0; index < keys['length']; index += 1) {
-    div1 = tag('div')
+    div1 = document.createElement('div')
     main.appendChild(div1)
     row = keys[index]
     for (index2 = 0; index2 < row['length']; index2 += 1) {
-      kbd1 = tag('kbd')
-
-      span1 = tag('span')
+      kbd1 = document.createElement('kbd')
+      span1 = document.createElement('span')
       span1.textContent = row[index2]
       span1.className = 'text'
-      //上面三句话可简写为span1 = tag('span';{textContent:row[index2],className:'text'})遍历赋值 element本身就是hash
-      button1 = tag('button')
+      button1 = document.createElement('button')
       button1.textContent = '编辑'
       button1.id = row[index2]
-      img = tag('img')
+      img = document.createElement('img')
       if (hash[row[index2]]) {
         img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
       } else {
